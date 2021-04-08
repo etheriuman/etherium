@@ -1,0 +1,52 @@
+
+
+html, body {
+  background: #e3e3e3;
+}
+
+/* 標準化 */
+* {
+  border: 0;
+  margin: 0;
+}
+
+ul, li {
+  list-style-type: none;
+}
+
+a,
+a:hover,
+p,
+span {
+  text-decoration: none;
+  color: #333333;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 0;
+  margin: 0;
+}
+
+/* 共用 */
+.neumorphism {
+  box-shadow:
+		-.3rem -.2rem 1rem #fff,
+		inset .4rem .5rem .9rem #E3E3E375,
+		.3rem .2rem .5rem #88888890,
+		inset -.4rem -.5rem .9rem #E3E3E390;
+}
+
+.neumorphism:hover {
+  box-shadow:
+		-.3rem -.2rem 1rem #fff,
+		inset .4rem .5rem .9rem #ddd,
+		.3rem .2rem .5rem #88888890,
+		inset -.4rem -.5rem .9rem #ddd;
+}
+
+.neumorphism:active {
+  box-shadow:
+		-.3rem -.2rem 1rem #fff,
+		inset .4rem .5rem .9rem #aaaaaa35,
+		.3erm .2rem .5rem #88888850,
+		inset -.4rem -.5rem .9rem #f2f2f2;
+}
