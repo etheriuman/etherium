@@ -16,13 +16,7 @@
     </section>
     <section class="projects">
       <p class="section-title primary">Projects</p>
-      <div class="gallery">
-        <div class="gallery-item">1</div>
-        <div class="gallery-item">1</div>
-        <div class="gallery-item">1</div>
-        <div class="gallery-item">1</div>
-        <div class="gallery-item">1</div>
-      </div>
+      <Gallery />
     </section>
     <section class="contact">
       <p class="section-title primary">Contact me</p>
@@ -45,10 +39,13 @@
 </template>
 
 <script>
+import Gallery from './../components/Gallery'
 import Map from './../components/Map'
+
 
 export default {
   components: {
+    Gallery,
     Map
   }
 }
@@ -110,17 +107,17 @@ section {
   background-image: url('./../icons/right-arrow.svg');
   transform: rotate(90deg);
   /* animation */
-  animation: scroll-down 1s infinite;
+  animation: scroll-down 1s infinite ease-in-out;
 }
 @keyframes scroll-down {
   0% {
-    bottom: 0;
+    bottom: -20px;
   }
   50% {
-    bottom: 20px;
+    bottom: 0px;
   }
   100% {
-    bottom: 0;
+    bottom: -20px;
   }
 }
 .link {
@@ -129,12 +126,7 @@ section {
   height: 100%;
 }
 /* ---------- projects ---------- */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
-  grid-gap: 20px;
-}
+
 /* ---------- contact ---------- */
 .contact-container {
   width: 100%;
@@ -174,14 +166,21 @@ section {
   border-radius: 20px;
   margin-bottom: 30px;
 }
-/* map */
+/* ---------- map ---------- */
 .contact-map {
   width: 100%;
-  height: 500px;
+  height: 300px;
   border-radius: 25px;
   padding: 15px;
   overflow: hidden;
 }
+/* ---------- media > 576px ---------- */
+@media screen and (min-width: 576px) {
+.contact-map {
+  height: 500px;
+}
+}
+/* ---------- media > 900px ---------- */
 @media screen and (min-width: 900px) {
 .contact-container {
   flex-flow: row;
