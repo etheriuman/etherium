@@ -7,7 +7,7 @@
           <router-link class="link" to="/">
           </router-link>
         </div>
-        <p class="topic-name">Ether Huang</p>
+        <p class="topic-name"><span class="secondary">Ether</span> Huang</p>
         <p class="topic-position">Front-end developer</p>
       </div>
       <ul class="nav-content">
@@ -47,9 +47,7 @@
       </div>
     </div>
     <!-- open/close navbar -->
-    <div class="nav-toggle">
-      <span @click.prevent.stop="toggleNavbar()" v-if="!isOpen">+</span>
-      <span @click.prevent.stop="toggleNavbar()" v-else>x</span>
+    <div @click.prevent.stop="toggleNavbar()" class="nav-toggle" :class="{ rotate: isOpen }">
     </div>
   </div>
 </template>
@@ -74,18 +72,36 @@ export default {
 
 <style scoped>
 .nav-toggle {
-  position: absolute;
-  top: 30px;
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  background-image: url('./../icons/plus.svg');
+  top: 50px;
   right: 30px;
   z-index: 1000;
   cursor: pointer;
+  transform: rotate(0);
+  transition: transform .1s ease-out;
+}
+.rotate {
+  transform: rotate(45deg);
+  transform-origin: center;
+  transition: transform .1s ease-out;
 }
 .nav-topic {
   width: 100%;
   text-align: center;
 }
-.topic-name {
+.topic-name, .topic-name span  {
   font-size: 1.5rem;
+  position: relative;
+}
+.topic-name span::after {
+  content: 'Ether';
+  color: var(--colorPrimary);
+  position: absolute;
+  left: 2px;
+  top: -5px;
 }
 .nav-logo {
   display: block;
@@ -98,7 +114,7 @@ export default {
 .nav-container {
   width: 100%;
   height: 100%;
-  position: absolute;
+  position: fixed;
   z-index: 1000;
   background: #e3e3e3;
   padding: 30px 50px;
@@ -123,6 +139,7 @@ export default {
 }
 .nav-item {
   width: 50%;
+  max-width: 500px;
   height: 60px;
   border-radius: 25px;
   margin-bottom: 30px;
