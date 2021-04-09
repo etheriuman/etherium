@@ -1,10 +1,12 @@
 <template>
   <div class="gallery">
-    <div class="gallery-item neumorphism" v-for="(project, index) in initProjects" :key="index">
+    <div class="gallery-item neumorphism" v-for="(project, index) in projects" :key="index">
       <div class="project-img">
         <a :href="project.url" target="_blank">
           <img :src="project.img" alt="project-image">
-          <span class="project-visit">visit website</span>
+          <span v-if="language === 'EN'" class="project-visit">visit website</span>
+          <!-- sep -->
+          <span v-else class="project-visit">來去網站逛逛</span>
         </a>
       </div>
       <div class="project-content">
@@ -25,14 +27,27 @@ import { mapState } from 'vuex'
 export default {
   data() {
     return {
-      initProjects: []
+      projects: []
     }
   },
   computed: {
-    ...mapState(['projects'])
+    ...mapState(['language', 'projectsCH', 'projectsEN'])
+  },
+  watch: {
+    language(data) {
+      if (data === 'EN') {
+        this.projects = [...this.projectsEN]
+        return
+      }
+      this.projects = [...this.projectsCH]
+    }
   },
   mounted() {
-    this.initProjects = [...this.projects]
+    if (this.language === 'EN') {
+        this.projects = [...this.projectsEN]
+        return
+      }
+    this.projects = [...this.projectsCH]
   }
 }
 </script>
@@ -46,7 +61,7 @@ export default {
   position: relative;
   display: flex;
   flex-flow: column;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   border-radius: 25px;
   overflow: hidden;
 }
@@ -81,7 +96,7 @@ export default {
   width: 100%;
   display: flex;
   flex-flow: column;
-  padding: 10px 10px 10px 20px;
+  padding: 15px 15px 15px 20px;
 }
 .content-title {
   position: relative;

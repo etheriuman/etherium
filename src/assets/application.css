@@ -15,7 +15,8 @@ ul, li {
 a,
 a:hover,
 p,
-span {
+span,
+button {
   text-decoration: none;
   color: #333333;
   font-size: 14px;

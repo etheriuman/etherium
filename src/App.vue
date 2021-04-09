@@ -14,6 +14,10 @@ export default {
   name: 'App',
   components: {
     Navbar
+  },
+  created() {
+    const language = localStorage.getItem('language')
+    this.$store.commit('setLanguage', language)
   }
 }
 </script>

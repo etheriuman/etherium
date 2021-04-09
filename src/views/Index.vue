@@ -2,32 +2,54 @@
   <div class="index">
     <section class="intro">
       <div class="logo"><span>...</span></div>
-      <p>Hi,</p>
-      <p>I'm <span class="name secondary">Ether</span>,</p>
-      <p>web developer</p>
+      <p v-if="language === 'EN'">Hi,</p>
+      <!-- sep -->
+      <p v-else>嗨,</p>
+      <p v-if="language === 'EN'">I'm <span class="name secondary">Ether</span>,</p>
+      <!-- sep -->
+      <p v-else>我是 <span class="name secondary">Ether</span>,</p>
+      <p v-if="language === 'EN'">web developer</p>
+      <!-- sep -->
+      <p v-else>前端工程師</p>
       <div class="intro-contact">
         <button class="neumorphism">
           <router-link class="link" to="/contact">
-            Contact me!
+            <span v-if="language === 'EN'">Contact me!</span>
+            <!-- sep -->
+            <span v-else>與我聯繫</span>
           </router-link>
         </button>
         <div class="hint"></div>
       </div>
     </section>
     <section class="projects">
-      <p class="section-title primary">Projects</p>
+      <p v-if="language === 'EN'" class="section-title primary">Projects</p>
+      <!-- sep -->
+      <p v-else class="section-title primary">專案</p>
       <Gallery />
     </section>
     <section class="contact">
-      <p class="section-title primary">Contact me</p>
+      <p v-if="language === 'EN'" class="section-title primary">Contact me</p>
+      <!-- sep -->
+      <p v-else class="section-title primary">與我聯繫</p>
       <div class="contact-container">
         <div class="contact-form">
           <form action="https://formspree.io/f/mzbybjdj" method="POST" class="contact-form" autocomplete="off">
-            <input class="neumorphism-reverse" id="input-name" name="name" type="text" placeholder="Name" required/>
-            <input class="neumorphism-reverse" id="input-email" name="email" type="email" placeholder="Email" required/>
-            <input class="neumorphism-reverse" id="input-subject" name="subject" type="text" placeholder="Subject" required/>
-            <textarea class="neumorphism-reverse" id="input-message" name="message" type="text" placeholder="Message" required/>
-            <button type="submit" class="neumorphism">Send</button>
+            <input v-if="language === 'EN'" class="neumorphism-reverse" id="input-name" name="name" type="text" placeholder="Name" required/>
+            <!-- sep -->
+            <input v-else class="neumorphism-reverse" id="input-name" name="name" type="text" placeholder="你的名稱" required/>
+            <input v-if="language === 'EN'" class="neumorphism-reverse" id="input-email" name="email" type="email" placeholder="Email" required/>
+            <!-- sep -->
+            <input v-else class="neumorphism-reverse" id="input-email" name="email" type="email" placeholder="你的郵件" required/>
+            <input v-if="language === 'EN'" class="neumorphism-reverse" id="input-subject" name="subject" type="text" placeholder="Subject" required/>
+            <!-- sep -->
+            <input v-else class="neumorphism-reverse" id="input-subject" name="subject" type="text" placeholder="標題" required/>
+            <textarea v-if="language === 'EN'" class="neumorphism-reverse" id="input-message" name="message" type="text" placeholder="Message" required/>
+            <!-- sep -->
+            <textarea v-else class="neumorphism-reverse" id="input-message" name="message" type="text" placeholder="訊息" required/>
+            <button v-if="language === 'EN'" type="submit" class="neumorphism">Send</button>
+            <!-- sep -->
+            <button v-else type="submit" class="neumorphism">發送</button>
           </form>
         </div>
         <div class="contact-map neumorphism">
@@ -41,12 +63,16 @@
 <script>
 import Gallery from './../components/Gallery'
 import Map from './../components/Map'
+import { mapState } from 'vuex'
 
 
 export default {
   components: {
     Gallery,
     Map
+  },
+  computed: {
+    ...mapState(['language'])
   }
 }
 </script>
@@ -87,6 +113,7 @@ section {
 .intro p {
   font-size: 70px;
   line-height: 70px;
+  margin-bottom: 10px;
 }
 .intro-contact {
   margin-top: 50px;
@@ -103,7 +130,6 @@ section {
   width: 40px;
   height: 40px;
   position: relative;
-  margin-right: 100px;
   background-image: url('./../icons/right-arrow.svg');
   transform: rotate(90deg);
   /* animation */

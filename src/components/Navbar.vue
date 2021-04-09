@@ -13,17 +13,23 @@
       <ul class="nav-content">
         <li @click.prevent.stop="closeNavbar()" class="nav-item neumorphism">
           <router-link class="link" to="/about">
-            <span>About</span>
+            <span v-if="language === 'EN'">About</span>
+            <!-- sep -->
+            <span v-else>關於</span>
           </router-link>
         </li>
         <li @click.prevent.stop="closeNavbar()" class="nav-item neumorphism">
           <router-link class="link" to="/projects">
-            <span>Projects</span>
+            <span v-if="language === 'EN'">Projects</span>
+            <!-- sep -->
+            <span v-else>專案</span>
           </router-link>
         </li>
         <li @click.prevent.stop="closeNavbar()" class="nav-item neumorphism">
           <router-link class="link" to="/contact">
-            <span>Contact</span>
+            <span v-if="language === 'EN'">Contact</span>
+            <!-- sep -->
+            <span v-else>聯繫我</span>
           </router-link>
         </li>
       </ul>
@@ -47,17 +53,41 @@
       </div>
     </div>
     <!-- open/close navbar -->
-    <div @click.prevent.stop="toggleNavbar()" class="nav-toggle" :class="{ rotate: isOpen }">
+    <div
+      @click.prevent.stop="toggleNavbar()"
+      class="nav-toggle"
+      :class="{ rotate: isOpen }"
+    >
+    </div>
+    <!-- switch language -->
+    <div
+      v-if="language === 'EN'"
+      @click.prevent.stop="switchLanguage('CH')"
+      class="language-toggle"
+    >
+    CH
+    </div>
+    <div
+      v-else
+      @click.prevent.stop="switchLanguage('EN')"
+      class="language-toggle"
+    >
+    EN
     </div>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   data() {
     return {
       isOpen: false
     }
+  },
+  computed: {
+    ...mapState(['language'])
   },
   methods: {
     toggleNavbar() {
@@ -65,6 +95,9 @@ export default {
     },
     closeNavbar() {
       this.isOpen = false
+    },
+    switchLanguage(language) {
+      this.$store.commit('setLanguage', language)
     }
   }
 }
@@ -82,6 +115,18 @@ export default {
   cursor: pointer;
   transform: rotate(0);
   transition: transform .1s ease-out;
+}
+.language-toggle {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  top: 100px;
+  right: 32px;
+  z-index: 1000;
+  cursor: pointer;
+  font-size: 1.1rem;
+  line-height: 20px;
 }
 .rotate {
   transform: rotate(45deg);
