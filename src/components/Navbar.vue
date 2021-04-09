@@ -109,8 +109,8 @@ export default {
   width: 20px;
   height: 20px;
   background-image: url('./../icons/plus.svg');
-  top: 50px;
-  right: 30px;
+  top: 35px;
+  right: 20px;
   z-index: 1000;
   cursor: pointer;
   transform: rotate(0);
@@ -121,8 +121,8 @@ export default {
   width: 20px;
   height: 20px;
   text-align: center;
-  top: 100px;
-  right: 32px;
+  top: 85px;
+  right: 22px;
   z-index: 1000;
   cursor: pointer;
   font-size: 1.1rem;
@@ -136,6 +136,7 @@ export default {
 .nav-topic {
   width: 100%;
   text-align: center;
+  margin-bottom: 20px;
 }
 .topic-name, .topic-name span  {
   font-size: 1.5rem;

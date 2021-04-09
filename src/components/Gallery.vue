@@ -100,8 +100,9 @@ export default {
 }
 .content-title {
   position: relative;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   margin-bottom: 10px;
+  padding-right: 30px;
 }
 .content-description {
   margin-bottom: 25px;
@@ -136,6 +137,9 @@ export default {
 }
 .project-content {
   width: 60%;
+}
+.content-title {
+  font-size: 1.5rem;
 }
 }
 </style>

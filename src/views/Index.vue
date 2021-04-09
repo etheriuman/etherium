@@ -80,7 +80,7 @@ export default {
 <style scoped>
 section {
   width: 100%;
-  padding: 30px 50px;
+  padding: 15px 25px;
   margin-bottom: 100px;
 }
 .section-title {
@@ -89,13 +89,13 @@ section {
 }
 /* ---------- intro ---------- */
 .logo {
-  width: 230px;
-  height: 230px;
+  width: 150px;
+  height: 150px;
   background-image: url('./../imgs/logo.svg');
   margin-bottom: 20px;
 }
 .name {
-  font-size: 70px;
+  font-size: 50px;
   position: relative;
   text-shadow:
 		-.3rem -.2rem 1rem #fff,
@@ -111,9 +111,10 @@ section {
   top: 0px;
 }
 .intro p {
-  font-size: 70px;
-  line-height: 70px;
-  margin-bottom: 10px;
+  font-size: 35px;
+  line-height: 50px;
+  margin-bottom: 0px;
+  white-space: nowrap;
 }
 .intro-contact {
   margin-top: 50px;
@@ -202,12 +203,43 @@ section {
 }
 /* ---------- media > 576px ---------- */
 @media screen and (min-width: 576px) {
+section {
+  padding: 30px 50px;
+}
+/* intro */
+.logo {
+  width: 180px;
+  height: 180px;
+}
+.intro p {
+  font-size: 50px;
+  line-height: 60px;
+  margin-bottom: 5px;
+}
+.name {
+  font-size: 60px;
+}
+/* contact */
 .contact-map {
   height: 500px;
 }
 }
 /* ---------- media > 900px ---------- */
 @media screen and (min-width: 900px) {
+/* intro */
+.logo {
+  width: 230px;
+  height: 230px;
+}
+.intro p {
+  font-size: 70px;
+  line-height: 70px;
+  margin-bottom: 10px;
+}
+.name {
+  font-size: 70px;
+}
+/* contact */
 .contact-container {
   flex-flow: row;
 }
