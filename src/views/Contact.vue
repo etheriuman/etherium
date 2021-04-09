@@ -1,5 +1,5 @@
 <template>
-  <section class="contact">
+  <section>
     <p v-if="language === 'EN'" class="section-title primary">Contact me</p>
     <!-- sep -->
     <p v-else class="section-title primary">與我聯繫</p>
