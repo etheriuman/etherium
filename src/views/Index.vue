@@ -81,10 +81,10 @@ export default {
 section {
   width: 100%;
   padding: 15px 25px;
-  margin-bottom: 100px;
+  margin-bottom: 60px;
 }
 .section-title {
-  font-size: 50px;
+  font-size: 40px;
   margin-bottom: 50px;
 }
 /* ---------- intro ---------- */
@@ -205,6 +205,10 @@ section {
 @media screen and (min-width: 576px) {
 section {
   padding: 30px 50px;
+  margin-bottom: 80px;
+}
+.section-title {
+  font-size: 50px;
 }
 /* intro */
 .logo {
@@ -226,6 +230,9 @@ section {
 }
 /* ---------- media > 900px ---------- */
 @media screen and (min-width: 900px) {
+section {
+  margin-bottom: 100px;
+}
 /* intro */
 .logo {
   width: 230px;

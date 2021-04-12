@@ -33,6 +33,7 @@ export default new Vuex.Store({
           'Vue',
           'Vuex',
           'GoogleMap API',
+          'three.js',
           'Formspree'
         ]
       },
@@ -78,6 +79,7 @@ export default new Vuex.Store({
           'Vue',
           'Vuex',
           'GoogleMap API',
+          'three.js',
           'Formspree'
         ]
       },

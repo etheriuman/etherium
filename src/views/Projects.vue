@@ -24,7 +24,7 @@ export default {
 <style scoped>
 section {
   width: 100%;
-  padding: 20px 50px;
+  padding: 15px 25px;
 }
 .section-title {
   font-size: 40px;
@@ -39,7 +39,7 @@ section {
 /* ---------- media > 900px ---------- */
 @media screen and (min-width: 900px) {
 .section-title {
-font-size: 50px;
+  font-size: 50px;
 }
 }
 </style>

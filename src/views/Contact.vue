@@ -54,7 +54,7 @@ export default {
 <style scoped>
 section {
   width: 100%;
-  padding: 20px 50px;
+  padding: 15px 25px;
 }
 .section-title {
   font-size: 40px;
@@ -71,7 +71,7 @@ section {
   display: flex;
   flex-flow: column;
   align-items: flex-end;
-  justify-content: center;
+  justify-content: flex-start;
 }
 .contact-description {
   margin-bottom: 50px;
