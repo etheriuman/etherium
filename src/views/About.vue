@@ -90,6 +90,7 @@ section {
 }
 .about-description {
   width: 100%;
+  padding: 0 20px;
 }
 .about-footer {
   width: 100%;
