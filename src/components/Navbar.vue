@@ -164,8 +164,8 @@ export default {
 .nav-logo {
   display: block;
   margin: 0 auto;
-  width: 150px;
-  height: 150px;
+  width: 120px;
+  height: 120px;
   background-image: url('./../imgs/logo.svg');
   background-repeat: no-repeat;
 }
@@ -179,16 +179,17 @@ export default {
   display: flex;
   flex-flow: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 .nav-content {
   width: 100%;
   height: 50%;
   padding: 0;
+  margin-bottom: 20px;
   display: flex;
   flex-flow: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
 }
 .link {
   display: block;
@@ -200,7 +201,6 @@ export default {
   max-width: 500px;
   height: 60px;
   border-radius: 25px;
-  margin-bottom: 30px;
   text-align: center;
   line-height: 60px;
 }
@@ -212,13 +212,26 @@ export default {
 .footer-item {
   width: 40px;
   height: 40px;
-  margin: 20px;
+  margin: 15px;
   border-radius: 50%;
   text-align: center;
   line-height: 40px;
 }
+.footer-item a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .footer-item a img {
+  display: block;
   width: 20px;
   height: 20px;
+}
+/* ---------- media > 576px ---------- */
+@media screen and (min-width: 576px) {
+.nav-logo {
+  width: 150px;
+  height: 150px;
+}
 }
 </style>

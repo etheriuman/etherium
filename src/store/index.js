@@ -33,7 +33,6 @@ export default new Vuex.Store({
           'Vue',
           'Vuex',
           'GoogleMap API',
-          'three.js',
           'Formspree'
         ]
       },
@@ -79,7 +78,6 @@ export default new Vuex.Store({
           'Vue',
           'Vuex',
           'GoogleMap API',
-          'three.js',
           'Formspree'
         ]
       },
@@ -106,10 +104,33 @@ export default new Vuex.Store({
       'Postman',
       'REST API',
       'GoogleMap API',
-      'three.js',
       'Formspree',
       'Postman'
-    ]
+    ],
+    aboutInfoEN: {
+      nameTitle: 'Name',
+      nameContent: 'Ether Huang',
+      emailTitle: 'Email',
+      emailContent: 'timmy26291125@gmail.com',
+      educationTitle: 'Education',
+      educationContent: [
+        'Bachelor degree in product design, SCU',
+        'Fullstack development program(major in front-end), ALPHAcamp'
+      ],
+      vedioUrl: 'https://www.youtube.com/embed/OYYCqufmqEg'
+    },
+    aboutInfoCH: {
+      nameTitle: '姓名',
+      nameContent: '黃彥臻',
+      emailTitle: '聯絡信箱',
+      emailContent: 'timmy26291125@gmail.com',
+      educationTitle: '教育背景',
+      educationContent: [
+        '實踐大學 - 工業產品設計系',
+        'ALPHAcamp - 全端開發學程(主修前端)'
+      ],
+      vedioUrl: 'https://www.youtube.com/embed/iNbI-cWPsGo'
+    }
   },
   mutations: {
     setLanguage(state, language) {

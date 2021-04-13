@@ -4,10 +4,10 @@
     <!-- sep -->
     <p v-else class="section-title primary">專案</p>
     <div class="filter-bar">
-      <p v-if="language === 'EN'" class="filter-title">filter</p>
+      <p v-if="language === 'EN'" class="filter-title">filter tags</p>
       <!-- sep -->
-      <p v-else class="filter-title">過濾</p>
-      <div class="all-keys">
+      <p v-else class="filter-title">篩選標籤</p>
+      <div class="all-keys neumorphism-reverse">
         <span
           v-for="(key, index) in filterKeys"
           :key="index" class="tag"
@@ -20,8 +20,8 @@
         <template v-if="filteringKeys.length">
           <p v-if="language === 'EN'" class="filter-title">filtering</p>
           <!-- sep -->
-          <p v-else class="filter-title">過濾中</p>
-          <div class="all-keys">
+          <p v-else class="filter-title">篩選中</p>
+          <div class="all-keys neumorphism-reverse">
             <span
               v-for="(key, index) in filteringKeys"
               :key="index" class="tag"
@@ -90,14 +90,23 @@ section {
 }
 .filter-title {
   font-size: 1.3rem;
-  margin-bottom: 25px;
+  margin-bottom: 10px;
 }
 .all-keys {
+  width: 100%;
   padding-left: 25px;
   margin-bottom: 25px;
+  min-height: 50px;
+  border-radius: 25px;
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  align-content: space-around;
+  flex-wrap: wrap;
 }
 .tag{
   display: inline-block;
+  height: 25px;
   margin-right: 10px;
   margin-bottom: 5px;
   padding: 2px 5px;
@@ -110,6 +119,9 @@ section {
 @media screen and (min-width: 576px) {
 section {
   padding: 30px 50px;
+}
+.all-keys {
+  width: 70%;
 }
 }
 /* ---------- media > 900px ---------- */

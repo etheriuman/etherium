@@ -7,7 +7,7 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    name: 'Index',
+    name: 'index',
     component: Index
   },
   {
@@ -34,6 +34,13 @@ const routes = [
 
 const router = new VueRouter({
   routes
+})
+
+router.beforeEach((to, from, next) => {
+  // go to top of the page
+  // console.log('go to page:', to.name)
+  window.scrollTo(0, 0)
+  next()
 })
 
 export default router

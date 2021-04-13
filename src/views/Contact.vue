@@ -104,7 +104,7 @@ section {
 /* ---------- map ---------- */
 .contact-map {
   width: 100%;
-  height: 300px;
+  height: 350px;
   border-radius: 25px;
   padding: 15px;
   overflow: hidden;
@@ -133,9 +133,6 @@ font-size: 50px;
 }
 .contact-form {
   padding-right: 30px;
-}
-.contact-map {
-  height: 70vh;
 }
 }
 </style>
