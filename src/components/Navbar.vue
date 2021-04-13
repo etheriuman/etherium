@@ -7,7 +7,11 @@
           <router-link class="link" to="/">
           </router-link>
         </div>
-        <p class="topic-name"><span class="secondary">Ether</span> Huang</p>
+        <div @click.prevent.stop="closeNavbar()" class="topic-name">
+          <router-link class="link" to="/">
+            <span class="secondary logo">Ether</span><span>Huang</span>
+          </router-link>
+        </div>
         <p class="topic-position">Front-end developer</p>
       </div>
       <ul class="nav-content">
@@ -134,20 +138,28 @@ export default {
   transition: transform .1s ease-out;
 }
 .nav-topic {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
   width: 100%;
   text-align: center;
   margin-bottom: 20px;
 }
-.topic-name, .topic-name span  {
+.topic-name a{
+  width: 135px;
+  display: flex;
+  justify-content: space-between;
+}
+.topic-name span {
   font-size: 1.5rem;
   position: relative;
 }
-.topic-name span::after {
+.topic-name .logo::after {
   content: 'Ether';
   color: var(--colorPrimary);
   position: absolute;
   left: 2px;
-  top: -5px;
+  top: -3px;
 }
 .nav-logo {
   display: block;
