@@ -97,6 +97,18 @@ export default new Vuex.Store({
           'REST API'
         ]
       }
+    ],
+    tags: [
+      'Javascript',
+      'Vue',
+      'Vuex',
+      'Socket.io',
+      'Postman',
+      'REST API',
+      'GoogleMap API',
+      'three.js',
+      'Formspree',
+      'Postman'
     ]
   },
   mutations: {

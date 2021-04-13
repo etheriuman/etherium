@@ -1,6 +1,6 @@
 <template>
   <div class="gallery">
-    <div class="gallery-item neumorphism" v-for="(project, index) in projects" :key="index">
+    <div class="gallery-item neumorphism" v-for="project in projectsShown" :key="project.title">
       <div class="project-img">
         <a :href="project.url" target="_blank">
           <img :src="project.img" alt="project-image">
@@ -25,29 +25,53 @@
 import { mapState } from 'vuex'
 
 export default {
+  props: {
+    filteringKeys: {
+      type: Array,
+      default: () => {
+        return []
+      }
+    }
+  },
   data() {
     return {
-      projects: []
+      projectsShown: []
     }
   },
   computed: {
     ...mapState(['language', 'projectsCH', 'projectsEN'])
   },
-  watch: {
-    language(data) {
-      if (data === 'EN') {
-        this.projects = [...this.projectsEN]
+  methods: {
+    filterWithKeys(keyArr) {
+      if (!keyArr.length) {
         return
       }
-      this.projects = [...this.projectsCH]
+      this.projectsShown = this.projectsShown.filter(project => {
+        return keyArr.every(tag => project.tags.includes(tag))
+      })
+    },
+    projectsShownChange(language, keyArr) {
+      if (language === 'EN') {
+        this.projectsShown = [...this.projectsEN]
+        this.filterWithKeys(keyArr)
+        return
+      }
+      this.projectsShown = [...this.projectsCH]
+      this.filterWithKeys(keyArr)
+    }
+  },
+  watch: {
+    // language change
+    language(data) {
+      this.projectsShownChange(data, this.filteringKeys)
+    },
+    filteringKeys(data) {
+      this.projectsShownChange(this.language, data)
     }
   },
   mounted() {
-    if (this.language === 'EN') {
-        this.projects = [...this.projectsEN]
-        return
-      }
-    this.projects = [...this.projectsCH]
+    // check current language
+    this.projectsShownChange(this.language, this.filteringKeys)
   }
 }
 </script>
