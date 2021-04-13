@@ -78,7 +78,7 @@ section {
   width: 220px;
   height: 220px;
   margin: 0 auto;
-  padding: 25px;
+  padding: 15px;
   border-radius: 25px;
   margin-bottom: 40px;
 }
@@ -108,14 +108,17 @@ section {
   align-items: center;
 }
 .footer-item a {
-  display: block;
-  width: 20px;
-  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
 }
 .footer-item a img {
   display: block;
-  width: 100%;
-  height: 100%;
+  line-height: 40px;
+  width: 20px;
+  height: 20px;
 }
 /* ---------- media > 576px ---------- */
 @media screen and (min-width: 576px) {
