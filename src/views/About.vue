@@ -13,7 +13,7 @@
         <br><br>
         Love solving problems, coworking and Highly interested in techs, sience and design. To me, stay curios about everything and never stop learning is the most important thing for a developer.
         <br><br>
-        In some of my spare time, I like to understand principles of dev tools that I've used through Google,Youtube,MDN,documents and StackOverFlow since it's super cool to know how it works for me. And in the remining time, I read stuffs, search for newest Memes and "talk design" with my friends.
+        In some of my spare time, I like to dig into the principles of dev tools that I've used through Google,Youtube,MDN,documents and StackOverFlow since it's super cool to know how it works for me. And in the remining time, I read stuffs, search for newest Memes and "talk design" with my friends.
       </p>
       <!-- sep -->
       <p class="about-description" v-else>
@@ -91,8 +91,12 @@
           </div>
         </div>
       </div>
-      <div class="about-skill about-info neumorphism">
-        <iframe :src="infoShown.vedioUrl + '?modestbranding=1&rel=0'" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <div class="about-vedio about-info neumorphism">
+        <div class="iframe-outer">
+          <div class="iframe-mask">
+            <iframe :src="infoShown.vedioUrl + '?modestbranding=1&rel=0'" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -258,15 +262,28 @@ section {
   width: 20px;
   height: 20px;
 }
-.about-skill {
+.about-vedio {
   padding: 20px;
 }
-.about-skill iframe {
+.iframe-outer {
+  width: 100%;
+  height: 100%;
+}
+.iframe-mask {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.about-vedio iframe {
   display: block;
   width: 100%;
   height: 100%;
   min-height: 300px;
   border-radius: 15px;
+  overflow: hidden;
+  z-index: -1;
 }
 /* ---------- media > 576px ---------- */
 @media screen and (min-width: 576px) {
@@ -279,7 +296,7 @@ section {
 .about-info {
   padding: 30px 40px 20px 40px;
 }
-.about-skill {
+.about-vedio {
   padding: 20px;
 }
 }
@@ -308,7 +325,7 @@ section {
   width: calc(50% - 15px);
   padding: 30px 40px 20px 40px;
 }
-.about-skill {
+.about-vedio {
   padding: 20px;
 }
 }
