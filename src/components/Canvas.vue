@@ -6,7 +6,7 @@
 import * as Three from 'three'
 
 export default {
-  name: 'ThreeTest',
+  name: 'Three',
   data() {
     return {
       camera: null,
