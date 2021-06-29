@@ -26,7 +26,7 @@ export default new Vuex.Store({
       {
         title: 'Personal website - Etherium',
         description: 'Personal website for showing some "Home made" works,  using neumorphism UI design. Import Google Map API, let the audience know more about me.',
-        url: '',
+        url: 'https://etheriuman.github.io/etherium/#/',
         img: 'https://i.imgur.com/pFN6ALH.png',
         github: 'https://github.com/etheriuman/etherium',
         tags: [
@@ -74,7 +74,7 @@ export default new Vuex.Store({
       {
         title: '個人網站 Etherium',
         description: '用現在手上有的開發技能與工具親手打造一個 Personal Website。用了一直想實作看看的擬真式 UI design，並導入 GoogleMap API，讓想暸解我的各位看官們知道一下小弟住在台北市北投捷運站這邊，有空可以來聊聊天。',
-        url: '',
+        url: 'https://etheriuman.github.io/etherium/#/',
         img: 'https://i.imgur.com/pFN6ALH.png',
         github: 'https://github.com/etheriuman/etherium',
         tags: [
