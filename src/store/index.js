@@ -9,7 +9,7 @@ export default new Vuex.Store({
     projectsEN: [
       {
         title: 'Simple Twitter',
-        description: 'A web application ispired by Twitter, built with Vue and Bootstrap.Users can sign in and available to store data into database or get data from database through server. For more information, please checkout out the GitHub repo.',
+        description: 'A web application ispired by Twitter, built with Vue and Bootstrap.Users can sign in and available to store data into database or get data from database through server. For more information, please checkout out the GitHub repo. Guest account: user1/12345678.',
         url: 'https://etheriuman.github.io/twitter-frontend/',
         img: 'https://i.imgur.com/XRQYv8Q.png?1',
         github: 'https://github.com/etheriuman/twitter-frontend',
@@ -40,7 +40,7 @@ export default new Vuex.Store({
       },
       {
         title: 'Restaurant Forum',
-        description: 'The web app provides food lovers collect their favorite restaurants, and share amazing restaurants with others. With complete CRUD API methods, users connect with each other in this application.',
+        description: 'The web app provides food lovers collect their favorite restaurants, and share amazing restaurants with others. With complete CRUD API methods, users connect with each other in this application. Guest account: user1@example.com/12345678',
         url: 'https://etheriuman.github.io/restaurants-forum-vue/',
         img: 'https://i.imgur.com/aQlgU4a.png',
         github: 'https://github.com/etheriuman/restaurants-forum-vue',
