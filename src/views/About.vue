@@ -91,24 +91,21 @@
           </div>
         </div>
       </div>
-      <div class="about-vedio about-info neumorphism">
-        <div class="iframe-outer">
-          <div class="iframe-mask">
-            <iframe :src="infoShown.vedioUrl + '?modestbranding=1&rel=0'" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-        </div>
+      <div class="about-info neumorphism">
+        <PersonalPhotos/>
       </div>
     </div>
   </section>
 </template>
 
 <script>
-// import Canvas from './../components/Canvas'
-import { mapState } from 'vuex' 
+import PersonalPhotos from './../components/PersonalPhotos'
+
+import { mapState } from 'vuex'
 
 export default {
   components: {
-    // Canvas
+    PersonalPhotos
   },
   data() {
     return {
@@ -175,12 +172,14 @@ section {
 /* about info */
 .about-low {
   width: 100%;
+  height: 100%;
   display: flex;
-  flex-flow: column-reverse;
+  flex-flow: column;
   justify-content: space-between;
 }
 .about-info {
   width: 100%;
+  height: 100%;
   border-radius: 25px;
   padding: 15px 30px;
   margin-bottom: 25px;
@@ -262,29 +261,6 @@ section {
   width: 20px;
   height: 20px;
 }
-.about-vedio {
-  padding: 20px;
-}
-.iframe-outer {
-  width: 100%;
-  height: 100%;
-}
-.iframe-mask {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  border-radius: 15px;
-  overflow: hidden;
-}
-.about-vedio iframe {
-  display: block;
-  width: 100%;
-  height: 100%;
-  min-height: 300px;
-  border-radius: 15px;
-  overflow: hidden;
-  z-index: -1;
-}
 /* ---------- media > 576px ---------- */
 @media screen and (min-width: 576px) {
 section {
@@ -295,9 +271,6 @@ section {
 }
 .about-info {
   padding: 30px 40px 20px 40px;
-}
-.about-vedio {
-  padding: 20px;
 }
 }
 
@@ -323,6 +296,7 @@ section {
 }
 .about-info {
   width: calc(50% - 15px);
+  height: 450px;
   padding: 30px 40px 20px 40px;
 }
 .about-vedio {

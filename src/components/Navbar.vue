@@ -17,9 +17,9 @@
       <ul class="nav-content">
         <li @click.prevent.stop="closeNavbar()" class="nav-item neumorphism">
           <router-link class="link" to="/about">
-            <span v-if="language === 'EN'">About</span>
+            <span v-if="language === 'EN'">About me</span>
             <!-- sep -->
-            <span v-else>關於</span>
+            <span v-else>關於我</span>
           </router-link>
         </li>
         <li @click.prevent.stop="closeNavbar()" class="nav-item neumorphism">

@@ -137,7 +137,13 @@ export default new Vuex.Store({
         'ALPHAcamp - 全端開發學程(主修前端)'
       ],
       vedioUrl: 'https://www.youtube.com/embed/iNbI-cWPsGo'
-    }
+    },
+    photos: [
+      'https://i.imgur.com/ARGXu69.jpg',
+      'https://i.imgur.com/MVQevSs.jpg',
+      'https://i.imgur.com/wOxAO89.jpg',
+      'https://i.imgur.com/kWZ5K7r.jpg'
+    ]
   },
   mutations: {
     setLanguage(state, language) {
