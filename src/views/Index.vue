@@ -1,7 +1,10 @@
 <template>
   <div class="index">
-    <section class="intro">
-      <div class="logo"><span>...</span></div>
+    <section class="intro" @mouseenter="mouseIn" @mouseleave="mouseOut">
+      <div class="logo">
+        <span>...</span>
+        <div class="logo-eyes" ref="eyes" :style="{top:eyesMoveY + 'px',left:eyesMoveX+'px'}"></div>
+      </div>
       <p v-if="language === 'EN'">Hi,</p>
       <!-- sep -->
       <p v-else>嗨,</p>
@@ -71,8 +74,60 @@ export default {
     Gallery,
     Map
   },
+  data() {
+    return {
+      isHoveringIntro: true,
+      eyesMoveX: 0,
+      eyesMoveY: 0
+    }
+  },
   computed: {
     ...mapState(['language'])
+  },
+  methods: {
+    moveEyes() {
+      const intro = document.querySelector('.intro')
+      const mousePosition = {
+        x: window.event.clientX,
+        y: window.event.clientY
+      }
+      const introStartPoint = {
+        x: intro.getBoundingClientRect().left,
+        y: intro.getBoundingClientRect().top
+      }
+      const introDivSize = {
+        width: intro.getBoundingClientRect().width,
+        height: intro.getBoundingClientRect().height
+      }
+      const eyesMoveMaxDistance = {
+        x: 10,
+        y: 3
+      }
+      const eyesMovePercentage = {
+        x: (mousePosition.x - introStartPoint.x) / introDivSize.width,
+        y: (mousePosition.y - introStartPoint.y) / introDivSize.height,
+      }
+      this.eyesMoveX = eyesMoveMaxDistance.x * eyesMovePercentage.x
+      this.eyesMoveY = eyesMoveMaxDistance.y * eyesMovePercentage.y
+    },
+    resetEyesPosition() {
+      this.eyesMoveX = 0
+      this.eyesMoveY = 0
+    },
+    mouseIn() {
+      this.isHoveringIntro = true
+    },
+    mouseOut() {
+      this.isHoveringIntro = false
+      this.resetEyesPosition()
+    }
+  },
+  created() {
+    window.addEventListener('mousemove', () => {
+      if (this.isHoveringIntro) {
+        this.moveEyes()
+      }
+    })
   }
 }
 </script>
@@ -80,6 +135,7 @@ export default {
 <style scoped>
 section {
   width: 100%;
+  position: relative;
   padding: 15px 25px;
   margin-bottom: 60px;
 }
@@ -91,8 +147,17 @@ section {
 .logo {
   width: 150px;
   height: 150px;
-  background-image: url('./../imgs/logo.svg');
+  background-image: url('./../imgs/avatar_face.svg');
+  position: relative;
   margin-bottom: 20px;
+}
+.logo-eyes {
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  background-image: url('./../imgs/avatar_eyes.svg');
+  position: absolute;
 }
 .name {
   font-size: 50px;
